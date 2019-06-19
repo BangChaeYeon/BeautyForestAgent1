@@ -35,7 +35,10 @@
             this.btnTray = new System.Windows.Forms.Button();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.폼보이기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -66,17 +69,36 @@
             this.btnTray.TabIndex = 2;
             this.btnTray.Text = "▼";
             this.btnTray.UseVisualStyleBackColor = true;
+            this.btnTray.Click += new System.EventHandler(this.BtnTray_Click);
             // 
             // contextMenuStrip
             // 
+            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.폼보이기ToolStripMenuItem,
+            this.종료ToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip.Size = new System.Drawing.Size(211, 70);
             // 
             // notifyIcon
             // 
             this.notifyIcon.ContextMenuStrip = this.contextMenuStrip;
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
             this.notifyIcon.Text = "notifyIcon";
+            this.notifyIcon.DoubleClick += new System.EventHandler(this.NotifyIcon_DoubleClick);
+            // 
+            // 폼보이기ToolStripMenuItem
+            // 
+            this.폼보이기ToolStripMenuItem.Name = "폼보이기ToolStripMenuItem";
+            this.폼보이기ToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.폼보이기ToolStripMenuItem.Text = "Beauty Forest Agent 열기";
+            this.폼보이기ToolStripMenuItem.Click += new System.EventHandler(this.폼보이기ToolStripMenuItem_Click);
+            // 
+            // 종료ToolStripMenuItem
+            // 
+            this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.종료ToolStripMenuItem.Text = "종료";
+            this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -93,7 +115,9 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Beauty Forest Agent v0.1 by [3108] [방채연]";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -105,6 +129,8 @@
         private System.Windows.Forms.Button btnTray;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.ToolStripMenuItem 폼보이기ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 종료ToolStripMenuItem;
     }
 }
 
